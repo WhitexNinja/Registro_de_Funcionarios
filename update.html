@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background: linear-gradient(45deg, green, #28C76F, #FDEB71);
+            background-size: 400% 400%;
+            animation: gradientAnimation 5s ease infinite;
+            height: 100vh;
+            margin: 0;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Atualizar Dados do Funcionário</h2>
+        <form action='' method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{employee.name}}" required>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="age" name="age" value="{{employee.age}}" required>
+            </div>
+            <div class="mb-3">
+                <label for="position" class="form-label">Cargo</label>
+                <input type="text" class="form-control" id="position" name="position" value="{{employee.position}}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        </form>
+        <a href="/armazenamento" class="btn btn-secondary mt-3">Cancelar</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

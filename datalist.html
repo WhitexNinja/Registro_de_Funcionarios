@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datalist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background: linear-gradient(45deg, green, #28C76F, #FDEB71);
+            background-size: 400% 400%;
+            animation: gradientAnimation 5s ease infinite;
+            height: 100vh;
+            margin: 0;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Funcionários</h2>
+        <div class="list-group">
+            {% for employee in employees %}
+                <a href="/armazenamento/{{ employee.employee_id }}" class="list-group-item list-group-item-action">
+                    {{ employee.name }} - {{ employee.position }}
+                </a>
+            {% endfor %}
+        </div>
+        <a href="/armazenamento" class="btn btn-secondary mt-3">Voltar</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
